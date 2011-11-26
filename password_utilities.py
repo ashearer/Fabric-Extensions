@@ -1,12 +1,14 @@
 """
 Utility functions for Fabric deployment scripts
-Compatibile with Fabric 0.9.1 and 0.9.2, Python 2.5 and 2.6.
+Compatible with Fabric 0.9.1 through 1.2, and Python 2.5 through 2.7.
 Temporary file handling works under both Windows and Unix-based OSes.
 
 by Andrew Shearer <ashearerw@shearersoftware.com>
 """
+import os
 
 from fabric import api as fapi
+from fabric.state import env
 
 def run_prompted(command, password='', prompt='Password[^:]*: ', pty=True):
     """
